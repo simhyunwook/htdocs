@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>오늘은 첫번재 php수업</title>
+	<style>p{color:red};</style>
 </head>
 <body>
 	<ul>
@@ -51,7 +52,23 @@
 			print $member["age"];
 			print "<pre>";
 			print_r ($member);
+		
+			
 		?>
-	</ul>
+	</ul><p>
+	<?php
+	//for문
+			for($i=1;$i<10;$i++)
+			{
+				print $i."회째의 반복입니다."."<br>";
+			}
+			for($i=1;$i<10;$i++)
+			{
+				for($j=1;$j<10;$j++)
+				{
+					print $i." * ".$j." = ".$i*$j."<br>";
+				}
+			}
+	?></p>
 </body>
 </html>
