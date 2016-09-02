@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>오늘은 첫번재 php수업</title>
-	<style>p{color:red};</style>
+	<style>p{backgroud-color:red};span{color:yellow}</style>
 </head>
 <body>
 	<ul>
@@ -58,21 +58,29 @@
 	</ul><p>
 	<?php
 	//for문
-			for($i=1;$i<10;$i++)
+		for($i=1;$i<10;$i++)
+		{
+			print $i."회째의 반복입니다."."<br>";
+		}
+		for($i=1;$i<10;$i++)
+		{
+			for($j=1;$j<10;$j++)
 			{
-				print $i."회째의 반복입니다."."<br>";
+                            if($i%2==1)
+                            {
+				echo "<span>". $i." * ".$j." = ".$i*$j."</span>"."<br>";
+                            } else {
+                                print $i." * ".$j." = ".$i*$j."<br>";
+                            }
 			}
-			for($i=1;$i<10;$i++)
-			{
-				for($j=1;$j<10;$j++)
-				{
-					print $i." * ".$j." = ".$i*$j."<br>";
-				}
-			}
-		/*if($i%2=1)
-			{
-				$1Color=#ff0000;
-			}*/
+		}
 	?></p>
+        <?php
+            $a=array("월","화","수","목","금","토","일");
+            foreach($a as $key){
+                echo $key;
+                print "<br>";
+            }
+        ?>
 </body>
 </html>
