@@ -85,5 +85,13 @@
                 print "<br>";
             }
         ?>
+        <?php
+            include_once("name.php");
+            //require_once("name.php");
+            print "$name 님 <br>";
+            $age=10;
+            print $age."<br>";
+            print "$message <br>";
+        ?>
 </body>
 </html>
