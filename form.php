@@ -27,7 +27,8 @@ and open the template in the editor.
             영화감상<br>
             <input type="checkbox" name="hobby[]" value="독서">
             독서<br>
-            <input type="submit" value="송신"><br>
+            <input type="submit" value="송신"><br>]
+            
         
     </body>
 </html>
