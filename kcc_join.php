@@ -1,7 +1,7 @@
-!DOCTYPE html>
-<html lang="en">
+<DOCTYPE html>
+<html lang="ko">
 <head>
-    <link rel="stylesheet" href="./">
+    <link rel="stylesheet" href="./kcc/kcc.css">
     <meta charset="UTF-8">
     <title>KCC</title>
 </head>
@@ -21,8 +21,8 @@
                     <li><a herf="#">사이트맵</a></li>
                 </ul>
                 <div id="line"></div>
-                <div><img id="img" src="./" alt="logo">
-                <img id="logo" src="img/Untitled-1.png" alt="logo"></div>
+                <div><img id="img" src="./kcc/kcclogo.png" alt="logo">
+                <img id="logo" src="./kcc/Untitled-1.png" alt="logo"></div>
                 <div class="intro">
                 <ul>
                     <li><a href="http://cheza.mireene.com/work/kccgolf/sub01.html#">INTRODUCTION<br/>클럽소개</a></li>
@@ -145,8 +145,8 @@
                     </tr>
                     <tr>
                         <td id="sms">SMS 수신여부&nbsp;<span class="star">*</span></td>
-                        <td><input type="radio"><span class="ex">&nbsp;예</span></td>
-                        <td><input type="radio"><span class="ex">&nbsp;아니오</span></td>
+                        <td class="ex"><input type="radio" name="sms" value="yes" >&nbsp;예</td>
+                        <td class="ex"><input type="radio"name="sms" value="no" >&nbsp;아니오</td>
                         <td><span class="ex">회원공지 알림에 대한 수신여부입니다.</span></td>
                     </tr>
                     <tr>
@@ -166,10 +166,8 @@
                     </tr>
                     <tr>
                         <td>DM발송처<span class="star">*</span></td>
-                        <td><input type="radio"></td>
-                        <td><span class="ex">자택</span></td>
-                        <td><input type="radio"></td>
-                        <td><span class="ex">직장</span></td>
+                        <td class="ex"><input type="radio" name="DM send" value="home">&nbsp;자택</td>
+                        <td class="ex"><input type="radio" name="DM send" value="compnay">&nbsp;직장</td>
                     </tr>
                 </table>
                 </div>
@@ -227,10 +225,8 @@
                         </tr>
                         <tr>
                             <td id="merry">결혼여부</td>
-                            <td><input type="radio"></td>
-                            <td><span class="ex">미혼</span></td>
-                            <td><input type="radio"></td>
-                            <td><span class="ex">기혼</span></td>
+                            <td class="ex"><input type="radio" name="merry" value="yes" >&nbsp;기혼</td>
+                            <td class="ex"><input type="radio" name="merry" value="no" >&nbsp;미혼</td>
                         </tr>
                         <tr>
                             <td id="mdate">결혼기념일</td>

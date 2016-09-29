@@ -10,7 +10,7 @@ and open the template in the editor.
         <title>텍스 송신 테스트</title>
     </head>
     <body>
-        
+        <form action="view.php" name="form1" method="post">
             이름 : <br>
             <input type="text" name="onname"><br>
             비밀번호 : <br>
@@ -27,8 +27,7 @@ and open the template in the editor.
             영화감상<br>
             <input type="checkbox" name="hobby[]" value="독서">
             독서<br>
-            <input type="submit" value="송신"><br>]
-            
-        
+            <input type="submit" value="송신"><br>
+        </form>
     </body>
 </html>
