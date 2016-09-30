@@ -70,7 +70,7 @@
                    <form action="kcc_insert.php" method="post">
                     <tr>
                         <td>한글이름&nbsp;<span class="star">*</span></td>
-                        <td><input type="text" name=korea_name></td>
+                        <td><input type="text" name="korea_name"></td>
                     </tr>
                     <tr>
                         <td>영문이름</td>
@@ -167,8 +167,8 @@
                     </tr>
                     <tr>
                         <td>DM발송처<span class="star">*</span></td>
-                        <td class="ex"><input type="radio" name="DM send" value="home" checked>&nbsp;자택</td>
-                        <td class="ex"><input type="radio" name="DM send" value="compnay">&nbsp;직장</td>
+                        <td class="ex"><input type="radio" name="DM_send" value="home" checked>&nbsp;자택</td>
+                        <td class="ex"><input type="radio" name="DM_send" value="compnay">&nbsp;직장</td>
                     </tr>
                 </div>
                 <div id="line2"></div>
