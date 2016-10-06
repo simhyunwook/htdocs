@@ -1,57 +1,54 @@
-<?php
-    include 'kcc_db.php';
-    $sql="SELECT * FROM member order by itdx desc"
-    $resurt=$pdo->query($sql);
-?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>viewfile</title>
 </head>
 <body>
+    
     <?php
-        while($row=$result->fetch());{
+    $db = new PDO("mysql:host=127.0.0.1;dbname=kcc;charset=utf8", "root", "");
+    //$homen = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/", "$1-$2-$3", $homen);
+    $sql = "INSERT INTO member SET
+        korea_name=?,
+        english_name=?,
+        year=?,
+        month=?,
+        day=?,
+        id=?,
+        password=?,
+        homephone=?,
+        selphone=?,
+        sms=?,
+        home_post=?,
+        home_address1=?";
+    $rs = $db->prepare($sql);
+    $rs->execute([
+        $_POST["korea_name"],
+        $_POST["english_name"],
+        $_POST["year"],
+        $_POST["month"],
+        $_POST["day"],
+        $_POST["id"],
+        $_POST["password"],
+        $_POST["homephone"].$_POST["middle_homephone"].$_POST["last_homephone"],
+        $_POST["selphone"].$_POST["middle_selphone"].$_POST["last_selphone"],
+        $_POST["sms"],
+        $_POST["home_post"],
+        $_POST["home_address1"]."-".$_POST["home_address"],  
+    ]);/* or die("<script>alert('실패')</script>");*/
+    print "INSERT 성공";
+    //echo $sql."<br>"; 
+    echo "이름 : ".$_POST["korea_name"]."<br>";
+    echo "name_en : ".$_POST["english_name"]."<br>";
+    echo "year : ".$_POST["year"]."<br>";
+    echo "월 : ".$_POST["month"]."<br>";
+    echo "day : ".$_POST["day"]."<br>";
+    echo "id : ".$_POST["id"]."<br>";
+    echo "pw : ".$_POST["password"]."<br>";
+    echo "tel : ".$_POST["homephone"]."<br>";
+    echo "phone : ".$_POST["selphone"]."<br>";
+    echo "email : ".$_POST["sms"]."<br>";
     ?>
-    <div class="wrap">
-        <?php
-            echo "이름: ".$row['korea_name']."<br/n>";
-            echo "영어이름: ".$row['english_name']."<br/n>";
-            echo "생일".$row['year']."년";
-            echo " ".$row['month']."월";
-            echo " ".$row['day']."일"."<br/n>";
-            echo "아이디".$row['id']."<br/n>";
-            echo "비밀번호".$row['password']."<br/n>";
-            echo "집전화".$row['homephone'];
-            echo " ".$row['middle_homephone'];
-            echo " ".$row['last_homephone']."<br/n>";
-            echo "전화번호".$row['selphone'].
-            echo " ".$row['middle_selphone'].
-            echo " ".$row['last_selphone']."<br/n>";
-            echo "sms 동의".$row['sms']."<br/n>";
-            echo "주소".$row['first_post'];
-            echo "-".$row['last_post']."<br/n>";
-            echo "상세주소".$row['home_address1'];
-            echo "".$row['home_address2']."<br/n>";
-            echo "DM 동의".$row['DM send']."<br/n>";
-            echo "회사 이름".$row['company_name']."<br/n>";
-            echo "직종".$row['op']."<br/n>";
-            echo "직위".$row['office']."<br/n>";
-            echo "회사 주소".$row['first_workpost'];
-            echo "".$row['second_sorkpost']."<br/n>";
-            echo "회사 상세주소".$row['work_address1'];
-            echo "".$row['work_address2']."<br/n>";
-            echo "회사 전화번호".$row['comphone'];
-            echo "-".$row['middle_comphone'];
-            echo "-".$row['last_comphone']."<br/n>";
-            echo "팩스번호".$row['faxphone'];
-            echo "-".$row['middle_faxphone'];
-            echo "-".$row['last_faxphone']."<br/n>";
-            echo "결혼 여부".$row['marry']."<br/n>";
-            echo "결혼 기념일".$row['marryyear']."년";
-            echo " ".$row['marrymonth']."월";
-            echo " ".$row['marryday']."일"."<br/n>";
-        ?>
-    </div>
 </body>
 </html>
