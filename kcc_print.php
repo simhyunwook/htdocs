@@ -5,7 +5,6 @@
     <title>viewfile</title>
 </head>
 <body>
-    
     <?php
     $db = new PDO("mysql:host=127.0.0.1;dbname=kcc;charset=utf8", "root", "");
     //$homen = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/", "$1-$2-$3", $homen);
@@ -31,8 +30,12 @@
         $_POST["day"],
         $_POST["id"],
         $_POST["password"],
-        $_POST["homephone"].$_POST["middle_homephone"].$_POST["last_homephone"],
-        $_POST["selphone"].$_POST["middle_selphone"].$_POST["last_selphone"],
+        $_POST["homephone"],
+        $_POST["middle_homephone"],
+        $_POST["last_homephone"],
+        $_POST["selphone"],
+        $_POST["middle_selphone"],
+        $_POST["last_selphone"],
         $_POST["sms"],
         $_POST["home_post"],
         $_POST["home_address1"]."-".$_POST["home_address"],  
