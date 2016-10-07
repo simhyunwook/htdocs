@@ -32,7 +32,7 @@
     print "INSERT 성공";
     //echo $sql."<br>"; 
     echo "이름 : ".$_POST["korea_name"]."<br>";
-    echo "name_en : ".$_POST["english_name"]."<br>";
+    echo "영어이름 : ".$_POST["english_name"]."<br>";
     echo "year : ".$_POST["year"]."<br>";
     echo "월 : ".$_POST["month"]."<br>";
     echo "day : ".$_POST["day"]."<br>";
