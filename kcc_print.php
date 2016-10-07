@@ -6,22 +6,29 @@
 </head>
 <body>
     <?php
-    $db = new PDO("mysql:host=127.0.0.1;dbname=kcc;charset=utf8", "root", "");
+    try{
+    $pdo = new PDO("mysql:host=127.0.0.1;dbname=kcc;charset=utf8","root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+    }
+    catch(PDOEXCEPTION $Exception){
+        die("연결실패".$Exception->getMessage());
+    }
     //$homen = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/", "$1-$2-$3", $homen);
-    $sql = "INSERT INTO member SET
-        korea_name=?,
-        english_name=?,
-        year=?,
-        month=?,
-        day=?,
-        id=?,
-        password=?,
-        homephone=?,
-        selphone=?,
-        sms=?,
-        home_post=?,
-        home_address1=?";
-    $rs = $db->prepare($sql);
+    $sql = "INSERT INTO member SET (
+        'korea_name=?',
+        'english_name=?',
+        'year=?',
+        'month=?',
+        'day=?',
+        'id=?',
+        'password=?',
+        'homephone=?',
+        'selphone=?',
+        'sms=?',
+        'home_post=?',
+        'home_address1=?')";
+    $rs = $pdo->prepare($sql);
     $rs->execute([
         $_POST["korea_name"],
         $_POST["english_name"],
@@ -52,6 +59,7 @@
     echo "tel : ".$_POST["homephone"]."<br>";
     echo "phone : ".$_POST["selphone"]."<br>";
     echo "email : ".$_POST["sms"]."<br>";
+    echo "집주소 : ".$_POST["home_post"]."<br>"
     ?>
 </body>
 </html>

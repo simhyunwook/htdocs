@@ -23,9 +23,16 @@ and open the template in the editor.
         }
         print "접속성공";
         $mysqli->close();*/
+        try{
         $pdo=new PDO('mysql:host=localhost;dename=php:charset=utf8','root','');
-        print "접속성공";
-        $pdo=null;
+        $pdo->setAttribute(PDO::ATTR_ERROR,PDO::ATTR_EXCEPTION);
+        $PDO->setAttribute(PDO::ATTR_EMULASTE_PREPARES,false);
+        print("연결성공");
+        }
+        catch(PDOException $Exception){
+            die("연결실패",$Exception->getMessage);
+        }
+        
         ?>
         
     </body>

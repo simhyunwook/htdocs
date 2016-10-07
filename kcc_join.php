@@ -53,6 +53,15 @@
             }
         }).open();
     }
+    var re_id = /^[a-z0-9_-]{3,16}$/; // 아이디 검사식
+    var uid=$('#id')
+    var form=$('sumbit')
+    form.submit(function(){
+    if(re_id.test(uid.val())!=true){
+            alert ('아이디가 올바르지 않습니다.')
+            return false;
+        };
+    })
 </script>
     <link rel="stylesheet" href="./kcc/kcc.css">
     <meta charset="UTF-8">
@@ -158,8 +167,8 @@
                     </tr>
                     <tr>
                         <td>아이디&nbsp;<span class="star">*</span></td>
-                        <td><input type="text" style="margin-left:16px;" name="id"></td>
-                        <td><input type="button" value="중복확인"></td>
+                        <td><input type="text" style="margin-left:16px;" name="id" id="id"></td>
+                        <td><input type="button" value="중복확인" class="submit"></td>
                         <td><span class="ex">사이트내에서 표시되는 본인정보이며 저장 후 수정하실 수 없습니다.</span></td>
                     </tr>
                     <tr>
@@ -313,7 +322,7 @@
                 <div id="line3"></div>
                 <div id="btn">
                    <a href="#" id="back">취소</a>
-                   <button id="next">다음</button>
+                   <button id="next" action="kcc_print.php">다음</button>
                 </div>
                 </div>
                 </form>
