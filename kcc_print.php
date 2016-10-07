@@ -15,7 +15,7 @@
         die("연결실패".$Exception->getMessage());
     }
     //$homen = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/", "$1-$2-$3", $homen);
-    $sql = "INSERT INTO member (korea_name,'english_name','year','month','day','id','password','homephone','selphone','sms','home_post') VALUE (:korea_name,:english_name,:year,:month,:day,:id,:password,:homephone,:selphone,:sms,:home_post)";
+    $sql = "INSERT INTO member (korea_name,english_name,year,month,day,id,password,homephone,selphone,sms,home_post) VALUES (:korea_name,:english_name,:year,:month,:day,:id,:password,:homephone,:selphone,:sms,:home_post)";
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':korea_name','$_POST["korea_name"]');
     $prepare->bindValue(':english_name','$_POST["english_name"]');
