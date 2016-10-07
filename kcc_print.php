@@ -15,38 +15,20 @@
         die("연결실패".$Exception->getMessage());
     }
     //$homen = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/", "$1-$2-$3", $homen);
-    $sql = "INSERT INTO member SET (
-        'korea_name=?',
-        'english_name=?',
-        'year=?',
-        'month=?',
-        'day=?',
-        'id=?',
-        'password=?',
-        'homephone=?',
-        'selphone=?',
-        'sms=?',
-        'home_post=?',
-        'home_address1=?')";
+    $sql = "INSERT INTO member (korea_name,'english_name','year','month','day','id','password','homephone','selphone','sms','home_post') VALUE (:korea_name,:english_name,:year,:month,:day,:id,:password,:homephone,:selphone,:sms,:home_post)";
     $rs = $pdo->prepare($sql);
-    $rs->execute([
-        $_POST["korea_name"],
-        $_POST["english_name"],
-        $_POST["year"],
-        $_POST["month"],
-        $_POST["day"],
-        $_POST["id"],
-        $_POST["password"],
-        $_POST["homephone"],
-        $_POST["middle_homephone"],
-        $_POST["last_homephone"],
-        $_POST["selphone"],
-        $_POST["middle_selphone"],
-        $_POST["last_selphone"],
-        $_POST["sms"],
-        $_POST["home_post"],
-        $_POST["home_address1"]."-".$_POST["home_address"],  
-    ]);/* or die("<script>alert('실패')</script>");*/
+    $rs->bindValue(':korea_name','$_POST["korea_name"]');
+    $rs->bindValue(':english_name','$_POST["english_name"]');
+    $rs->bindValue(':year','$_POST["year"]');
+    $rs->bindValue(':month','$_POST["month"]');
+    $rs->bindValue(':day','$_POST["day"]');
+    $rs->bindValue(':id','$_POST["id"]');
+    $rs->bindValue(':password','$_POST["password"]');
+    $rs->bindValue(':homephone','$_POST["homephone"]');
+    $rs->bindValue(':selphone','$_POST["selphone"]');
+    $rs->bindValue(':sms','$_POST["sms"]');
+    $rs->bindValue(':home_post','$_POST["home_post"]');
+    $rs->execute();/* or die("<script>alert('실패')</script>");*/
     print "INSERT 성공";
     //echo $sql."<br>"; 
     echo "이름 : ".$_POST["korea_name"]."<br>";
