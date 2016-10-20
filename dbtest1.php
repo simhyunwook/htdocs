@@ -30,7 +30,7 @@ and open the template in the editor.
         print("연결성공");
         }
         catch(PDOException $Exception){
-            die("연결실패",$Exception->getMessage);
+            die("연결실패".$Exception->getMessage);
         }
         
         ?>

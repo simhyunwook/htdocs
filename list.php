@@ -29,28 +29,30 @@ and open the template in the editor.
     <body>
         <table>
             <tr class='name'>
+                <th>삭제 여부</th>
+                <th>번호</th>
                 <th>이름</th>
                 <th>비밀번호</th>
                 <th>나이</th>
-                <th>삭제</th>
             </tr>
         <?php
             foreach($result as $row){
         ?>
     
         <tr>
-        <form action='del.php'method='post'>
-            <input type='hidden' value='<?=$row['idx']?>' name='idx'>
-            <td><?=$row['id']?></td>
+        <form method='post'name='form1'>
+            <td><input type="checkbox" value='<?=$row['idx']?>' name='idx[]'></td>
+            <td><?=$row['idx']?></td>
+            <td><?=$row['name']?></td>
             <td><?=$row['password']?></td>
             <td><?=$row['age']?></td>
-            <td><button>삭제</button></td>
         </form>
         </tr>
         <?php    
             }
         ?>
-            
+        <form action='del.php' name='delete'><button>삭제</button></form>
+        <form action='send.php'name='send'><button>전송</button></form>
         </table>
     </body>
 </html>

@@ -5,7 +5,7 @@ try{
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
         print "연결 성공";
     } 
-    catch (Exception $Exception) {
-        print ("연결실패".$Exception->getMessage);
+    catch (PDOException $Exception) {
+        die ("연결실패".$Exception->getMessage());
     }
 ?>
