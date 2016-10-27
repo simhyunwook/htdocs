@@ -1,5 +1,9 @@
 <?php
     include_once 'subdb.php';
+    $sql='select * from board';
+    $stmh=$pdo->prepare($sql);
+    $stmh->execute();
+    $result=$stmh->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -133,8 +137,16 @@
                         
 					</tbody>
 					</table>
-					
+					<div class="view">
+                        번호 : <p><?=$result['idx']?></p>
+                        제목 : <p><?=$result['name']?></p>
+                        작성일 : <p><?=$result['title']?></p>
+                        조횟수 : <p><?=$result['count']?></p>
+                        
+                        <a href="./board.php">목록</a>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
