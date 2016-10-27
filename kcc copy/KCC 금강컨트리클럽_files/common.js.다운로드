@@ -1,0 +1,74 @@
+$(function(){
+/* [s] 스크롤 네비게이션 */
+	if($('#header').hasClass('fixed')){
+		var active_num = $('#header').outerHeight(true)-1;
+		$.fn.scrollslide = function(){
+			var str = $(this).attr('href').split('#');
+			var id = str[1];
+			if(id){
+				pos = parseInt($('#'+id).offset().top - active_num);
+			}else{
+				id = 'wrap';
+				pos = 0;
+			};
+			$('#'+id).prepend('<div class="in_focus" style="position:absolute;overflow:hidden;width:1px;height:1px"></div>');
+			$('html,body').animate({scrollTop: pos}).queue(function(){
+				navtab();
+				scrollDisabled = false;
+				$(this).dequeue();
+				$('#'+id).find('.in_focus').attr('tabIndex',-1);
+				$('#'+id).find('.in_focus').css('outline','none');
+				$('#'+id).find('.in_focus').focus();
+				$('#'+id).find('.in_focus').bind('focusout', function(){
+					$(this).removeAttr('tabIndex',-1);
+					$(this).removeAttr('style', 'outline');
+					$(this).remove();
+				});
+			});
+		};
+		var scrollDisabled = false;
+		$('.site_gnblist li,#skip li').find('a').bind('click', function(){
+			scrollDisabled = true;
+			$(this).scrollslide();
+			return false;
+		});
+		$('.b_top,.btn_scroll').bind('click', function(){
+			scrollDisabled = true;
+			$(this).scrollslide();
+			return false;
+		});
+		function navtab(){
+			var st = $('html').scrollTop() || $('body').scrollTop();
+			$('#content').children().each(function(){
+				if(st >= $(this).position().top - active_num - 1){
+					$('.site_gnblist li').removeClass('selected');
+					$('.site_gnblist li').eq($(this).index()).addClass('selected');
+				};
+			});
+		};
+		$(window).scroll(function(){
+			if(!scrollDisabled){
+				navtab();
+			};
+		});
+	};
+/* [e] 스크롤 네비게이션 */
+/* [s] 사가 팝업 호출 */
+	$('.btn_saga').bind('click', function(){
+		$(this).hivepop({
+			p_width : '584',
+			p_height : '846'
+		});
+		return false;
+	});
+	$('.pop_wrap .bn_close').bind('click', function(){
+		window.close();
+	});
+/* [s] 사가 팝업 호출 */
+	$('.uniq_tab li').bind('click', function(){
+		$('.uniq_tab li').removeClass('on');
+		$(this).addClass('on');
+		$('.year_history').hide();
+		$('.year_history').eq($('.uniq_tab li').index(this)).show();
+	});
+});

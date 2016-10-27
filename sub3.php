@@ -116,20 +116,20 @@
 </div>
 <div id="container">
    <div class="right_con">	
-					<p class="pg_nav">	
-						<a href="#">홈</a>
-						<span>&gt;</span>
-						<a href="#">회원서비스</a>						
-						<span>&gt;</span>
-						<strong>회원가입</strong>
-					</p>
-					<div class="join_wrap">	
-						<h2 class="sp_sub join_title">회원가입</h2>
-						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함 없도록 밝고 건강한 새로운 소식을 회원님께 알려드립니다</p>
-					</div>	
+        <p class="pg_nav">	
+            <a href="#">홈</a>
+            <span>&gt;</span>
+            <a href="#">회원서비스</a>						
+            <span>&gt;</span>
+            <strong>회원가입</strong>
+        </p>
+        <div class="join_wrap">	
+            <h2 class="sp_sub join_title">회원가입</h2>
+            <p class="join_txt">금강컨트리클럽을 이용하시기 불편함 없도록 밝고 건강한 새로운 소식을 회원님께 알려드립니다</p>
+        </div>	
 					
-				</div>
-				</div>
+	</div>
+</div>
     <table class=notice>
         <tr>
             <th>번호</th>
@@ -146,7 +146,6 @@
             <td><?=$row['day']?></td>
         </tr>
     </table>
-</div>
 </div>
 <div id="footer">		
 		<div class="f_inner">

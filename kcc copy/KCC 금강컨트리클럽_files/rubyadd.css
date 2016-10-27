@@ -1,0 +1,15 @@
+.jviews { cursor: pointer; }
+.mycd { cursor: pointer; }
+
+/* 코스갤러리 숨김 */
+.course_wrap .tit_sublst { display: none; }
+.course_wrap .photo_lstbx { display: none; }
+
+/* 조인등록 초대인원 셀렉박스로 변경 */
+.reg_lst .in3{width:142px}
+.reg_lst .in3 label{float:left}
+.reg_lst .in3 .sel_box{width:60px;margin-left:5px}
+.reg_lst .in3 .sel_box li{padding:0;border:0;line-height:26px}
+
+
+.jr_search .inp3{width:230px}
