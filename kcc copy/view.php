@@ -3,7 +3,7 @@
     $sql='select * from board';
     $stmh=$pdo->prepare($sql);
     $stmh->execute();
-    $result=$stmh->fetchAll();
+    $result=$stmh->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -138,10 +138,11 @@
 					</tbody>
 					</table>
 					<div class="view">
-                        번호 : <p><?=$result['idx']?></p>
-                        제목 : <p><?=$result['name']?></p>
-                        작성일 : <p><?=$result['title']?></p>
-                        조횟수 : <p><?=$result['count']?></p>
+                                            번호 : <p><?=$result['idx']?></p>
+                                            이름 : <p><?=$result['name']?></p>
+                                            제목 : <p><?=$result['title']?></p>
+                                            작성일 : <p><?=$result['date']?></p>
+                                            조횟수 : <p><?=$result['count']?></p>
                         
                         <a href="./board.php">목록</a>
 					</div>

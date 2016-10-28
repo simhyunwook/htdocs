@@ -3,7 +3,7 @@
     $sql='select * from board';
     $stmh=$pdo->prepare($sql);
     $stmh->execute();
-    $result=$stmh->fetchAll();
+    $result=$stmh->fetch();
 ?>
 <!-- saved from url=(0053)https://www.kccgolf.co.kr/index.php/commu/notice_list -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body class="sub">
@@ -184,10 +184,10 @@ $(function()
                         </tr>
 					</tbody>
 					</table>
-					<div class="in"><?=$row['idx']?></div>
-                    <div class="in"><a href="/view.php?idx=<?=$row['idx']?>">"<?=$row['title']?></a></a></div>
-                    <div class="in"><?=$row['date']?></div>
-                    <div class="in"><?=$row['count']?></div>
+					    <div class="in"><?=$result['idx']?></div>
+                        <div class="in"><a href="./view.php?idx=<?=$result['idx']?>">"<?=$result['title']?></a></div>
+                        <div class="in"><?=$result['date']?></div>
+                        <div class="in"><?=$result['count']?></div>
 				</div>
 			</div>
 		</div>
