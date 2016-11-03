@@ -16,5 +16,6 @@
     else{
         echo"<script>alert('용량이 너무 큽니다')</script>";
     }
+    echo ""
     
 ?>
