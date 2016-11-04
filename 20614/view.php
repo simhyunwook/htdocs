@@ -17,6 +17,7 @@ $result=$stmh->fetch();
         ?>
         제목<p><?=$result['title']?></p>
         작성자<p><?=$result['name']?></p>
+        <input type="file">
         <a href="./delete.php?idx=<?=$result['idx']?>">삭제</a>
         <a href="./update.php?idx=<?=$result['idx']?>">수정</a>
     </body>

@@ -1,21 +1,15 @@
 <?php
-    $file=$_FILES['upload']['name'];
-    print_r ($file);
-    '<br>';
     //print_r ([$_SERVER]);
     $file_dir=$_SERVER['DOCUMENT_ROOT']."\\FUP\\";
-    '<br>';
-    print $file_dir;
-    print microtime();
-    $file_path=$file_dir.md5microtime().$file;
+    //print $file_dir;
+    $file_path=$file_dir.md5(microtime()).$_FILES["up"]["name"];
     print $file_path;
-    if($_FILES["upload"]["size"]<1)
+    if($_FILES["up"]["size"]<1)
     {
-    move_uploaded_file($_FILES['upload']['tmp_name'].$file_path);
+    move_uploaded_file($_FILES['up']['tmp_name'].$file_path);
     }
     else{
         echo"<script>alert('용량이 너무 큽니다')</script>";
     }
-    echo ""
-    
+    //echo "뭐가 문제일까...";
 ?>

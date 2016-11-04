@@ -31,6 +31,7 @@ and open the template in the editor.
             <div><?=$row['idx']?></div>
             <div><a href="view.php?idx=<?=$row['idx']?>"><?=$row['title']?></a></div>
             <div><?=$row['name']?></div>
+            
            <?php
             }
            ?>
