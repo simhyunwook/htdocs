@@ -5,7 +5,14 @@
     $stmh->execute();
     $result=$stmh->fetch();
 ?>
-
+<?php
+include "./lib.php";      // db 접속
+mysql_query(" update ABCDE set column1='xyz' where no='3' ");    // 쿼리실행
+?>
+<?php
+include "./lib.php";      // db 접속
+mysql_query(" delete from ABCDE where no='3' ");    // 쿼리실행
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
