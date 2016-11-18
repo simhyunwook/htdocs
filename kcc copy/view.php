@@ -1,17 +1,17 @@
 <?php
     include_once 'subdb.php';
-    $sql='select * from board';
+    $sql="select * from board where idx='{$_GET['idx']}'";
     $stmh=$pdo->prepare($sql);
     $stmh->execute();
     $result=$stmh->fetch();
 ?>
 <?php
-include "./lib.php";      // db 접속
-mysql_query(" update ABCDE set column1='xyz' where no='3' ");    // 쿼리실행
+//include "./up.php";      // db 접속
+//mysql_query(" update ABCDE set column1='xyz' where no='3' ");    // 쿼리실행
 ?>
 <?php
-include "./lib.php";      // db 접속
-mysql_query(" delete from ABCDE where no='3' ");    // 쿼리실행
+//include "./lib.php";      // db 접속
+//mysql_query(" delete from ABCDE where no='3' ");    // 쿼리실행
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -145,14 +145,15 @@ mysql_query(" delete from ABCDE where no='3' ");    // 쿼리실행
                         
 					</tbody>
 					</table>
-					<div class="view">
-                                            번호 : <p><?=$result['idx']?></p>
-                                            이름 : <p><?=$result['name']?></p>
-                                            제목 : <p><?=$result['title']?></p>
-                                            작성일 : <p><?=$result['date']?></p>
-                                            조횟수 : <p><?=$result['count']?></p>
-                        
+					<div class="viewer">
+                        <div>
+                            <p><?=$result['title']?></p>
+                            <p>작성자 : <?=$result['name'] ?></p>
+                            <p>작성일 : <?=$result['date']?></p>
+                            <p>조횟수 : <?=$result['count']?></p>
+                        </div>                        
                         <a href="./board.php">목록</a>
+                        <a href="./del.php?idx=<?=$result['idx']?>">삭제</a>
 					</div>
 				</div>
 				

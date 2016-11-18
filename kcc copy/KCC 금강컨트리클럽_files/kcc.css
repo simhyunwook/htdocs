@@ -417,7 +417,7 @@ body.sub{background:url(../img/bg_sub.jpg) no-repeat 100% 0}
 #ly_wrap2 .ly_top .md{top:0;border-top:1px solid #b0b0b0}
 #ly_wrap2 .ly_btm .lt{bottom:0;left:0;background-position:-137px -168px}
 #ly_wrap2 .ly_btm .rt{bottom:0;right:0;background-position:-149px -168px}
-#ly_wrap2 .ly_btm .md{botttom:0;border-bottom:1px solid #b0b0b0}
+#ly_wrap2 .ly_btm .md{bottom:0;border-bottom:1px solid #b0b0b0}
 #ly_wrap2 .inner{border-left:1px solid #b0b0b0;border-right:1px solid #b0b0b0;background:#fff}
 #ly_wrap2 .ly_header{height:26px;padding:4px 0 0 9px}
 #ly_wrap2 .ly_cont{border-top:2px solid #115fad}
@@ -898,7 +898,9 @@ body.sub{background:url(../img/bg_sub.jpg) no-repeat 100% 0}
 .termsbx table{width:100%;margin-top:10px;border-top:3px solid #ccc;border-bottom:3px solid #ccc}
 .termsbx table th,.termsbx table td{padding:5px 0}
 .termsbx table td{border-top:1px solid #ccc;text-align:center}
-
+.viewer{float: left;}//*************/
+.viewer>div{float: right;}
+.word{float: left;}
 .tabarea{position:relative;margin-top:40px}
 .tabarea .info_tab{margin-top:0}
 .tabarea .sp_coms{position:absolute;top:16px;height:23px}
