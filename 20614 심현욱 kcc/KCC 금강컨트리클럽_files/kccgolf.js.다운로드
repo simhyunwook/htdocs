@@ -1,0 +1,105 @@
+function fnmask()
+{
+      
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
+ 
+    //Set height and width to mask to fill up the whole screen
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
+     
+    //transition effect     
+    //$('#mask').fadeIn(1000);    
+    $('#mask').fadeTo("fast",0.8);
+      
+ 
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();       
+}
+
+function fn_alert(msg,e)
+{
+    $('#div_alert .ly_notice').show();
+    
+    var maskHeight = $(window).height();
+    var maskWidth = $(window).width();
+    
+    $('#wrap_pop').css({'width':maskWidth,'height':maskHeight});
+
+    //$('#div_alert').html(msg);
+    $('#div_alert .ly_txt').html(msg);
+    if (e)
+        e.preventDefault();
+    
+    $('#div_alert').show();
+    $('#div_alert').width($('#div_alert div').width());
+    $('#div_alert').height($('#div_alert div').height());
+    $('#div_alert').position({
+        of: $( "#wrap_pop" ),
+        at: 'center center'
+    });
+
+    fnmask();    
+}
+
+
+
+
+function fn_alert_hide()
+{
+    $('#div_alert .ly_notice').hide();
+    $('#div_alert').hide(); 
+    $('#mask').hide();
+       
+}
+
+
+
+
+
+function fn_pop(msg,e)
+{
+    
+    var maskHeight = $(window).height();
+    var maskWidth = $(window).width();
+    
+    $('#wrap_pop').css({'width':maskWidth,'height':maskHeight});
+    
+    $('#div_pop').html(msg);
+    
+    //if (e)
+    //    e.preventDefault();
+    //alert('2');
+    $('#div_pop').show();
+    $('#div_pop').width($('#div_pop div').width());
+    $('#div_pop').height($('#div_pop div').height());
+    $('#div_pop').position({
+        of: $( "#wrap_pop" ),
+        at: 'center center'
+    });
+    fnmask();  
+}
+
+
+
+
+function fn_pop_hide()
+{
+    $('#div_pop').hide(); 
+    $('#mask').hide();
+       
+}
+
+
+
+// 소개페이지_작은이미지클릭시 크게적용
+function photoclick(vthis,idx)
+{
+ 
+    $('.'+vthis).removeClass('selected');
+    $('.'+vthis).eq(idx).addClass('selected');
+        
+    $('.big_'+vthis).hide();  
+    $('.big_'+vthis).eq(idx).show();        
+}
