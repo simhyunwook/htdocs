@@ -1,0 +1,11 @@
+a{text-decoration: none;}
+a:hover{color: blue;}
+body{position: relative;}
+.off{float: left;}
+.off td{margin-bottom:25px ;}
+.on{float: left; border:1px solid black; margin-bottom: 5px;}
+#on1{width:30px;height: 30px;margin: 0 auto;}
+#on2{width: 175px;height: 30px;}
+#on3{width: 150px;height: 30px;}
+#on4{width: 120px;height: 30px;}
+#on5{width: 130px;height: 30px;}
